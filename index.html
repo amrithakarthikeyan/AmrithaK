@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Test Page</title>
+        <script src="index.js"></script>
+        <script>alert("This is an inline script!")
+                let c=()=>{
+                    let i=(document.getElementById('in').value);
+		    if (isNaN(i)) {
+                	alert("Please enter a valid weight.");
+            		} else if (i <= 15) {
+                		alert("Baggage is allowed.");
+            		} else {
+                		alert("Baggage exceeds the 15kg limit!");
+            			}
+        	    }
+       	                            
+		let doIt=()=>{
+  			let sum = 0;
+      			for (let i = 0; i < 1000; i++) {
+        			if (i % 3 === 0 || i % 5 === 0) {
+          			sum += i;
+       	 			}
+      			}
+      			alert("The sum of all multiples of 3 or 5 below 1000 is: " + sum);
+    		}
+ function sumOfMultiples(a, b, n) {
+    let sum = 0;
+    for (let i = 1; i < n; i++) {
+      if (i % a === 0 || i % b === 0) {
+        sum += i;
+      }
+    }
+    return sum;
+  }
+
+  function showSum() {
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+    let n = parseInt(document.getElementById("n").value);
+
+    if (isNaN(a) || isNaN(b) || isNaN(n)) {
+      alert("Please enter valid numbers for a, b, and n.");
+      return;
+    }
+
+    let result = sumOfMultiples(a, b, n);
+    alert("The sum of all multiples of " + a + " or " + b + " below " + n + " is: " + result);
+  }
+
+        </script>
+    </head>
+    <body>
+
+        <p>Exercise 1:</p>
+        <p>Create a function and button which allows a user to enter baggage weight and alerts them if 
+        the baggage exceeds the allowance of 15kg</p>
+
+
+
+    <p>Hello World!</p>
+    <input type="text" id="in">
+    <button onclick='c()'>Check Weight</button>
+    
+
+
+    <p>Exercise 2:</p>
+    <p>Create a page with a button</p>
+    <p>When the user clicks, </p>
+    <p>
+        <p>If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
+             The sum of these multiples is 23.</p>
+        <p>Find the sum of all the multiples of 3 or 5 below 1000 and alert the user to the correct answer.</p>
+</p>
+    <p>The prompt: <button onclick="doIt()">Press me!</button></p>
+
+
+    <p>Exercise 3, Functions:</p>
+    <p>Create a page with a button and three input boxes, labelled a, b and n</p>
+    <p>When the user clicks, </p>
+    <p>
+        <p>Create a function to return the sum of all the multiples of a or b below n</p>
+        <p>Call the function and alert the user to the correct answer when they press the button.</p>
+</p>
+<label for="a">Enter a: </label>
+<input type="number" id="a"><br><br>
+
+<label for="b">Enter b: </label>
+<input type="number" id="b"><br><br>
+
+<label for="n">Enter n: </label>
+<input type="number" id="n"><br><br>
+
+<button onclick="showSum()">Calculate Sum</button>
+
+
+    </body>
+</html>
