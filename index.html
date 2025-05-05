@@ -59,6 +59,13 @@
     return sum;
 }
   }
+  function calculateSum() {
+            let a = parseInt(document.getElementById("a").value);
+            let b = parseInt(document.getElementById("b").value);
+
+            let result = f4(a, b, array);
+            alert("Sum of multiples of " + a + " or " + b + " is: " + result);
+        }
 
         </script>
     </head>
@@ -107,9 +114,14 @@
 
 <p>Exercise 4, Arrays: f4 should take 2 integer and 1 array parameters and return an integer.</p>
 <p>Create a function f4 to return the sum of all the multiples of a or b in array l</p>
-let arr1 = [3, 5, 7, 10, 12, 15, 20];
-let result1 = f4(3, 5, arr1);
-console.log("Sum of multiples of 3 or 5:", result1);
+let array = [3, 5, 7, 10, 12, 15, 20];
+<label for="a">Enter value for A:</label>
+    <input type="number" id="a"><br><br>
+
+    <label for="b">Enter value for B:</label>
+    <input type="number" id="b"><br><br>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
 
 <p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
 <p>Call the function f4 in the function called by onClick, and alert the user to the 
