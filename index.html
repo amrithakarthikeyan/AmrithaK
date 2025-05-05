@@ -126,7 +126,16 @@ function calculateSum() {
 
 <p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
 <p>Call the function f4 in the function called by onClick, and alert the user to the 
-    returned answer when they press the button.</p>        
+    returned answer when they press the button.</p>  
+    <label for="a">Enter value for A:</label>
+    <input type="number" id="a"><br><br>
+
+    <label for="b">Enter value for B:</label>
+    <input type="number" id="b"><br><br>
+
+    <label for="l">Enter value for L (greater than a and b):</label>
+    <input type="number" id="l"><br><br>
+    <button onclick="f4(a,b,l)">Calculate Sum</button>
     
 <p>Exercise 5, Arrays: f5 should take array parameters and return an integer.</p>
 <p>Create a function f5 to return the sum of all the multiples of factors in a 
