@@ -71,6 +71,33 @@ function calculateSum() {
     alert("Sum of multiples of " + a + " or " + b + " is: " + result);
 }
 
+//Exercise 4.1
+
+function f4(a, b, l) {
+            let sum = 0;
+            for (let i = 0; i < l.length; i++) {
+                if (l[i] % a === 0 || l[i] % b === 0) {
+                    sum += l[i];
+                }
+            }
+            return sum;
+        }
+
+        function handleF41() {
+            let a = parseInt(document.getElementById("a41").value);
+            let b = parseInt(document.getElementById("b41").value);
+            let l = document.getElementById("l41").value.split(",").map(Number);
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Please enter valid numbers for a and b.");
+                return;
+            }
+
+            let result = f4(a, b, l);
+            alert("Sum of multiples of " + a + " or " + b + " in the array is: " + result);
+        }
+
+
         </script>
     </head>
     <body>
@@ -132,15 +159,17 @@ function calculateSum() {
 <p>(Exercise 4.1) Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
 <p>Call the function f4 in the function called by onClick, and alert the user to the 
     returned answer when they press the button.</p>  
-    <label for="a">Enter value for A:</label>
-    <input type="number" id="a"><br><br>
+    <p>Enter two numbers and a list of numbers (comma-separated):</p>
+    <label for="a41">Enter a:</label>
+    <input type="number" id="a41"><br><br>
 
-    <label for="b">Enter value for B:</label>
-    <input type="number" id="b"><br><br>
+    <label for="b41">Enter b:</label>
+    <input type="number" id="b41"><br><br>
 
-    <label for="l">Enter value for L (greater than a and b):</label>
-    <input type="number" id="l"><br><br>
-    <button onclick="f4(a,b,l)">Calculate Sum</button>
+    <label for="l41">Enter list (comma-separated):</label>
+    <input type="text" id="l41"><br><br>
+
+    <button onclick="handleF41()">Calculate f4</button>
     
 <p>Exercise 5, Arrays: f5 should take array parameters and return an integer.</p>
 <p>Create a function f5 to return the sum of all the multiples of factors in a 
