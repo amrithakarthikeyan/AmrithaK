@@ -124,7 +124,32 @@ function f5(aArr, lArr) {
       alert("Exercise 5 Result: " + result);
     }
 
+//Exercise 6:
+    function f6(aArr, lArr) {
+      let sum = 0;
+      for (let i = 0; i < lArr.length; i++) {
+        for (let j = 0; j < aArr.length; j++) {
+          if (lArr[i] % aArr[j] === 0) {
+            sum += lArr[i];
+            break;
+          }
+        }
+      }
+      return sum;
+    }
 
+    function handleF6() {
+      let a = document.getElementById("a6").value.split(",").map(Number);
+      let l = document.getElementById("l6").value.split(",").map(Number);
+
+      if (a.some(isNaN) || l.some(isNaN)) {
+        alert("Please enter valid comma-separated numbers in both inputs.");
+        return;
+      }
+
+      let result = f6(a, l);
+      alert("Exercise 6 Result: " + result);
+    }
         </script>
     </head>
     <body>
@@ -225,6 +250,16 @@ function f5(aArr, lArr) {
     returned answer when they press the button.</p>
 </p>
 <p>You may find the split function useful for creating arrays from the strings entered: <a href="https://www.w3schools.com/jsref/jsref_split.asp">Split</a></p>
+
+ <h2>Exercise 6 / 6.1</h2>
+  <p>Function f6 also returns the sum of all the multiples of factors in a found in l (general form).</p>
+  <label>Array a (e.g. 2,4,6):</label><br>
+  <input type="text" id="a6" placeholder="Enter array a"><br><br>
+
+  <label>Array l (e.g. 8,12,18,9):</label><br>
+  <input type="text" id="l6" placeholder="Enter array l"><br><br>
+
+  <button onclick="handleF6()">Calculate f6</button>
 
 <input type="text" id="nums"> <button onclick="mapNums()">Press me!</button>
 
