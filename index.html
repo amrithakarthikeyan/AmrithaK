@@ -152,18 +152,42 @@ function f5(aArr, lArr) {
     }
 
 //Exercise 7
-function f7(basket, prices) {
+    function f7(basket, prices) {
       let total = 0;
       for (let item in basket) {
         if (prices[item]) {
           total += basket[item] * prices[item];
         } else {
-          console.warn("No price available for:", item);
+          console.warn("Price not available for:", item);
         }
       }
-      return total.toFixed(2); 
+      return total.toFixed(2);
     }
 
+    // Helper: convert user input string into an object
+    function parseInputToObject(input, isPrice = false) {
+      let obj = {};
+      let items = input.split(",");
+      for (let pair of items) {
+        let [key, value] = pair.split(":");
+        if (key && value && !isNaN(value)) {
+          obj[key.trim()] = isPrice ? parseFloat(value) : parseInt(value);
+        }
+      }
+      return obj;
+    }
+
+    // Event handler for button
+    function handleF7() {
+      const basketText = document.getElementById("basketInput").value;
+      const pricesText = document.getElementById("pricesInput").value;
+
+      const basket = parseInputToObject(basketText);
+      const prices = parseInputToObject(pricesText, true); // prices use float
+
+      const total = f7(basket, prices);
+      document.getElementById("output").innerText = "Total Basket Cost: €" + total;
+    }
         </script>
     </head>
     <body>
@@ -283,11 +307,15 @@ Exercise 7, Objects as dictionaries/hashtables:</p>
 <p>basket should be an object holding product:quantity (string:int) pairs</p>
 <p>prices should be an object holding product:price (string:float) pairs</p>
 
- <h2>Exercise 7 – Calculate Basket Cost</h2>
+  <h2>Exercise 7.1 – Calculate Basket Total</h2>
 
-  <p><strong>Instructions:</strong> Click the button to calculate the total cost of a basket using object-based prices.</p>
+  <p><strong>Enter Basket:</strong> (e.g. <code>apple:2,banana:3</code>)</p>
+  <input type="text" id="basketInput" placeholder="product:quantity,product:quantity"><br><br>
 
-  <button onclick="testF7()">Calculate Basket Total</button>
+  <p><strong>Enter Prices:</strong> (e.g. <code>apple:0.5,banana:0.3</code>)</p>
+  <input type="text" id="pricesInput" placeholder="product:price,product:price"><br><br>
+
+  <button onclick="handleF7()">Calculate Total</button>
 
   <p id="output"></p>
   
