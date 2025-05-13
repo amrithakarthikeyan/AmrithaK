@@ -150,6 +150,20 @@ function f5(aArr, lArr) {
       let result = f6(a, l);
       alert("The Sum of multiples of array a found in l is " + result);
     }
+
+//Exercise 7
+function f7(basket, prices) {
+      let total = 0;
+      for (let item in basket) {
+        if (prices[item]) {
+          total += basket[item] * prices[item];
+        } else {
+          console.warn("No price available for:", item);
+        }
+      }
+      return total.toFixed(2); 
+    }
+
         </script>
     </head>
     <body>
@@ -263,6 +277,19 @@ function f5(aArr, lArr) {
 
 <input type="text" id="nums"> <button onclick="mapNums()">Press me!</button>
 
+Exercise 7, Objects as dictionaries/hashtables:</p>
+<p>Create a function, f7, that takes two parameters, basket and prices</p>
+<p>f7 should compute the cost of the basket given the prices supplied.</p>
+<p>basket should be an object holding product:quantity (string:int) pairs</p>
+<p>prices should be an object holding product:price (string:float) pairs</p>
 
+ <h2>Exercise 7 – Calculate Basket Cost</h2>
+
+  <p><strong>Instructions:</strong> Click the button to calculate the total cost of a basket using object-based prices.</p>
+
+  <button onclick="testF7()">Calculate Basket Total</button>
+
+  <p id="output"></p>
+  
     </body>
 </html>
